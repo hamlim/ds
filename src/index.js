@@ -12,10 +12,12 @@ const stringify = dict => key => {
 const main = () => {
   let fonts = require(process.argv[2])
   let colors = require(process.argv[3])
-  let numbers = require(provess.argv[4])
+  let numbers = require(process.argv[4])
+
+  let outputPath = process.argv[5];
 
   fs.writeFile(
-    'default.json',
+    outputPath,
     `{
   "colors": {
     ${Object.keys(colors)
