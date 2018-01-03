@@ -1,4 +1,3 @@
-const fs = require('fs')
 const stringify = dict => key => {
   if (typeof dict[key] === 'string') {
     return `"${key}": "${dict[key]}"`
@@ -9,16 +8,12 @@ const stringify = dict => key => {
   }
 }
 
-const main = () => {
-  let fonts = require(process.argv[2])
-  let colors = require(process.argv[3])
-  let numbers = require(process.argv[4])
+export default ({ font, color, number }) => {
+  let fonts = require(font)
+  let colors = require(font)
+  let numbers = require(number)
 
-  let outputPath = process.argv[5];
-
-  fs.writeFile(
-    outputPath,
-    `{
+  return `{
   "colors": {
     ${Object.keys(colors)
       .map(stringify(colors))
@@ -34,11 +29,5 @@ const main = () => {
       .map(stringify(numbers))
       .join(',')},
   },
-}`,
-    err => {
-      console.error(err)
-    },
-  )
+}`
 }
-
-main()

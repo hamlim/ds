@@ -6,7 +6,7 @@
   "scripts": {
     "make-example": "node ./dist/index.js ../example/colors.js ../example/fonts.js ../example/numbers.js ./example/out.json",
     "default": "node ./default/build.js",
-    "build": "babel ./src/index.js -o dist/index.js"
+    "build": "babel ./src --out-dir ./dist"
   },
   "author": "Matthew Hamlin <hamlim@outlook.com> (https://matthamlin.me/)",
   "license": "MIT",
