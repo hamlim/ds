@@ -33,7 +33,6 @@ const stringifiedJSON = ds({
 
 To see an example of this in action, clone the repo, run `yarn` then `yarn make-example` and see `./example/out.json` file generated.
 
-In this repo is a template inside `template.json` and a default config inside `default.json`.
 
 ### Prior Art:
 
