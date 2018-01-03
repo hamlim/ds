@@ -13,19 +13,21 @@ and then generates a json file at the output location.
 ```Javascript
 // CLI
 
-node require('./node_modules/@matthamlin/dist/cli') path/to/colors.js path/to/fonts.js path/to/numbers.js outputPath
+node require('./node_modules/@matthamlin/dist/cli') path/to/fonts.js path/to/colors.js path/to/numbers.js outputPath
 
-// Use during build
+// Use in a build script
 
 import ds from '@matthamlin/ds';
 
-const stringifiedJSON = ds('path/to/colors.js', 'path/to/fonts.js', 'path/to/numbers.js');
+const stringifiedJSON = ds({
+  fonts: 'path/to/fonts.js',
+  colors: 'path/to/colors.js',
+  numbers: 'path/to/numbers.js'
+});
 
 // fs.writeFile('./out.json', stringifiedJSON);
 // JSON.parse(stringifiedJSON);
-
 ```
-
 
 ### What does it look like?
 
