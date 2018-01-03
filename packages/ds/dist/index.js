@@ -1,6 +1,9 @@
 'use strict';
 
-const fs = require('fs');
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 const stringify = dict => key => {
   if (typeof dict[key] === 'string') {
     return `"${key}": "${dict[key]}"`;
@@ -11,14 +14,12 @@ const stringify = dict => key => {
   }
 };
 
-const main = () => {
-  let fonts = require(process.argv[2]);
-  let colors = require(process.argv[3]);
-  let numbers = require(process.argv[4]);
+exports.default = ({ font, color, number }) => {
+  let fonts = require(font);
+  let colors = require(font);
+  let numbers = require(number);
 
-  let outputPath = process.argv[5];
-
-  fs.writeFile(outputPath, `{
+  return `{
   "colors": {
     ${Object.keys(colors).map(stringify(colors)).join(',')}
   },
@@ -28,9 +29,5 @@ const main = () => {
   "numbers": {
     ${Object.keys(numbers).map(stringify(numbers)).join(',')},
   },
-}`, err => {
-    console.error(err);
-  });
+}`;
 };
-
-main();
