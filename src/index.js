@@ -8,12 +8,7 @@ const stringify = dict => key => {
   }
 }
 
-export default ({ font, color, number }) => {
-  let fonts = require(font)
-  let colors = require(font)
-  let numbers = require(number)
-
-  return `{
+export default ({ fonts, colors, numbers }) => `{
   "colors": {
     ${Object.keys(colors)
       .map(stringify(colors))
@@ -30,4 +25,3 @@ export default ({ font, color, number }) => {
       .join(',')},
   },
 }`
-}

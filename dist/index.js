@@ -3,7 +3,6 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
 const stringify = dict => key => {
   if (typeof dict[key] === 'string') {
     return `"${key}": "${dict[key]}"`;
@@ -14,12 +13,7 @@ const stringify = dict => key => {
   }
 };
 
-exports.default = ({ font, color, number }) => {
-  let fonts = require(font);
-  let colors = require(font);
-  let numbers = require(number);
-
-  return `{
+exports.default = ({ fonts, colors, numbers }) => `{
   "colors": {
     ${Object.keys(colors).map(stringify(colors)).join(',')}
   },
@@ -30,4 +24,3 @@ exports.default = ({ font, color, number }) => {
     ${Object.keys(numbers).map(stringify(numbers)).join(',')},
   },
 }`;
-};
