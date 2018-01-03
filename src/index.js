@@ -17,11 +17,11 @@ export default ({ fonts, colors, numbers }) => `{
   "fonts": {
     ${Object.keys(fonts)
       .map(stringify(fonts))
-      .join(',')},
+      .join(',')}
   },
   "numbers": {
     ${Object.keys(numbers)
       .map(stringify(numbers))
-      .join(',')},
+      .join(',')}
   },
 }`
