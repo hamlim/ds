@@ -32,8 +32,7 @@ const main = () => {
       .map(stringify(numbers))
       .join(',')},
   },
-}
-  `,
+}`,
     err => {
       console.error(err)
     },
