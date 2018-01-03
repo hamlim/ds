@@ -1,0 +1,11 @@
+{
+  "name": "@matthamlin/ds",
+  "version": "1.0.0",
+  "description": "👻",
+  "main": "index.md",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matthew Hamlin <hamlim@outlook.com> (https://matthamlin.me/)",
+  "license": "MIT"
+}
