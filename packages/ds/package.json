@@ -4,8 +4,13 @@
   "description": "👻",
   "main": "index.md",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "default": "node ./default/build.js"
   },
   "author": "Matthew Hamlin <hamlim@outlook.com> (https://matthamlin.me/)",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/preset-env": "^7.0.0-beta.36",
+    "babel-cli": "^6.26.0"
+  }
 }
