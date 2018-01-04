@@ -1,0 +1,20 @@
+{
+  "name": "@matthamlin/ds-cli",
+  "version": "1.2.0",
+  "description": "A cli for the ds tool",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src/ --out-dir dist/"
+  },
+  "author": "Matthew Hamlin <hamlim@outlook.com> (https://matthamlin.me/)",
+  "license": "MIT",
+  "dependencies": {
+    "@matthamlin/ds": "^1.2.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
