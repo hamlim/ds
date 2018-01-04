@@ -1,7 +1,7 @@
-const fs = require('fs')
-import ds from './index.js';
-const main = () => {
+import fs from 'fs';
+import ds from '@matthamlin/ds';
 
+const main = () => {
   fs.writeFile(
     process.argv[5],
     ds(
