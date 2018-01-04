@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src/ --out-dir dist/"
+    "build": "babel src/ --out-dir bin/"
   },
   "author": "Matthew Hamlin <hamlim@outlook.com> (https://matthamlin.me/)",
   "license": "MIT",
@@ -16,5 +16,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "bin": {
+    "ds-cli": "bin/index.js"
   }
 }
