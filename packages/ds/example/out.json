@@ -9,9 +9,9 @@
       "color": "#3C2F3D","size": "2.4rem"
     },"link": {
       "color": "#0EA47A","size": "1rem","activeColor": "#D56073"
-    },
+    }
   },
   "numbers": {
-    "small": ".85rem","base": "1rem","medium": "1.2rem","large": "2.4rem",
-  },
+    "small": ".85rem","base": "1rem","medium": "1.2rem","large": "2.4rem"
+  }
 }
