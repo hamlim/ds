@@ -13,7 +13,7 @@ and then generates a json file at the output location.
 ```Javascript
 // CLI
 
-node require('./node_modules/@matthamlin/dist/cli') path/to/fonts.js path/to/colors.js path/to/numbers.js outputPath
+ds-cli path/to/fonts.js path/to/colors.js path/to/numbers.js outputPath/ds.json
 
 // Use in a build script
 
