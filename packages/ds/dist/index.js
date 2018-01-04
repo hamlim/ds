@@ -18,9 +18,9 @@ exports.default = ({ fonts, colors, numbers }) => `{
     ${Object.keys(colors).map(stringify(colors)).join(',')}
   },
   "fonts": {
-    ${Object.keys(fonts).map(stringify(fonts)).join(',')},
+    ${Object.keys(fonts).map(stringify(fonts)).join(',')}
   },
   "numbers": {
-    ${Object.keys(numbers).map(stringify(numbers)).join(',')},
-  },
+    ${Object.keys(numbers).map(stringify(numbers)).join(',')}
+  }
 }`;
