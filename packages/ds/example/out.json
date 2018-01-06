@@ -1,17 +1,29 @@
 {
   "colors": {
-    "base": "#3C2F3D","white": "#fff","primary": "#0EA47A","secondary": "#D56073"
+    "base": "#3C2F3D",
+    "white": "#fff",
+    "primary": "#0EA47A",
+    "secondary": "#D56073"
   },
   "fonts": {
     "base": {
-      "color": "#3C2F3D","size": "1rem"
-    },"headline": {
-      "color": "#3C2F3D","size": "2.4rem"
-    },"link": {
-      "color": "#0EA47A","size": "1rem","activeColor": "#D56073"
+      "color": "#3C2F3D",
+      "size": "1rem"
+    },
+    "headline": {
+      "color": "#3C2F3D",
+      "size": "2.4rem"
+    },
+    "link": {
+      "color": "#0EA47A",
+      "size": "1rem",
+      "activeColor": "#D56073"
     }
   },
   "numbers": {
-    "small": ".85rem","base": "1rem","medium": "1.2rem","large": "2.4rem"
+    "small": ".85rem",
+    "base": "1rem",
+    "medium": "1.2rem",
+    "large": "2.4rem"
   }
 }

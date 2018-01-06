@@ -12,7 +12,8 @@
   "dependencies": {
     "@matthamlin/ds": "^1.3.0",
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1"
+    "babel-preset-env": "^1.6.1",
+    "prettier": "^1.9.2"
   },
   "publishConfig": {
     "access": "public"

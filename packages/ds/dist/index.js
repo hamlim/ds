@@ -3,6 +3,13 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+var _prettier = require('prettier');
+
+var _prettier2 = _interopRequireDefault(_prettier);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 const stringify = dict => key => {
   if (typeof dict[key] === 'string') {
     return `"${key}": "${dict[key]}"`;
@@ -13,7 +20,7 @@ const stringify = dict => key => {
   }
 };
 
-exports.default = ({ fonts, colors, numbers }) => `{
+exports.default = ({ fonts, colors, numbers }) => _prettier2.default.format(`{
   "colors": {
     ${Object.keys(colors).map(stringify(colors)).join(',')}
   },
@@ -23,4 +30,4 @@ exports.default = ({ fonts, colors, numbers }) => `{
   "numbers": {
     ${Object.keys(numbers).map(stringify(numbers)).join(',')}
   }
-}`;
+}`, { parser: 'json' });
