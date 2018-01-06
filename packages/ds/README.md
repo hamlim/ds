@@ -6,23 +6,17 @@ DS is a simple node script to build out a json config file for css-in-js design 
 * `fonts.js`
 * `numbers.js`
 
-and then generates a json file at the output location.
+and then generates a json string representation of the design system.
 
 ## Use:
 
 ```Javascript
-// CLI
-
-node require('./node_modules/@matthamlin/dist/cli') path/to/fonts.js path/to/colors.js path/to/numbers.js outputPath
-
-// Use in a build script
-
 import ds from '@matthamlin/ds';
 
 const stringifiedJSON = ds({
-  fonts: 'path/to/fonts.js',
-  colors: 'path/to/colors.js',
-  numbers: 'path/to/numbers.js'
+  fonts: require('path/to/fonts.js'),
+  colors: require('path/to/colors.js'),
+  numbers: require('path/to/numbers.js')
 });
 
 // fs.writeFile('./out.json', stringifiedJSON);

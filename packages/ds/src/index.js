@@ -1,3 +1,4 @@
+import prettier from 'prettier';
 const stringify = dict => key => {
   if (typeof dict[key] === 'string') {
     return `"${key}": "${dict[key]}"`
@@ -8,7 +9,7 @@ const stringify = dict => key => {
   }
 }
 
-export default ({ fonts, colors, numbers }) => `{
+export default ({ fonts, colors, numbers }) => prettier.format(`{
   "colors": {
     ${Object.keys(colors)
       .map(stringify(colors))
@@ -24,4 +25,4 @@ export default ({ fonts, colors, numbers }) => `{
       .map(stringify(numbers))
       .join(',')}
   }
-}`
+}`, {parser: 'json'});

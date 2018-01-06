@@ -6,23 +6,25 @@ DS is a simple node script to build out a json config file for css-in-js design 
 * `fonts.js`
 * `numbers.js`
 
-and then generates a json file at the output location.
+and then generates a json string representation of the design system.
 
 ## Use:
 
-```Javascript
+```bash
 // CLI
 
-ds-cli path/to/fonts.js path/to/colors.js path/to/numbers.js outputPath/ds.json
+yarn ds-cli path/to/fonts.js path/to/colors.js path/to/numbers.js outputPath/ds.json
+```
 
+```Javascript
 // Use in a build script
 
 import ds from '@matthamlin/ds';
 
 const stringifiedJSON = ds({
-  fonts: 'path/to/fonts.js',
-  colors: 'path/to/colors.js',
-  numbers: 'path/to/numbers.js'
+  fonts: require('path/to/fonts.js'),
+  colors: require('path/to/colors.js'),
+  numbers: require('path/to/numbers.js')
 });
 
 // fs.writeFile('./out.json', stringifiedJSON);
@@ -31,7 +33,7 @@ const stringifiedJSON = ds({
 
 ### What does it look like?
 
-To see an example of this in action, clone the repo, run `yarn` then `yarn make-example` and see `./example/out.json` file generated.
+To see an example of this in action, clone the repo, cd to `packages/ds`, run `yarn` then `yarn make-example` and see `./example/out.json` file generated.
 
 
 ### Prior Art:
