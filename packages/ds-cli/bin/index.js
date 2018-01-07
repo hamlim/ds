@@ -1,4 +1,3 @@
-#! /usr/bin/env node
 'use strict';
 
 var _fs = require('fs');
@@ -20,7 +19,8 @@ const main = () => {
   _fs2.default.writeFile(process.argv[5], (0, _ds2.default)({
     fonts: require(_path2.default.join(cwd, process.argv[2])),
     colors: require(_path2.default.join(cwd, process.argv[3])),
-    numbers: require(_path2.default.join(cwd, process.argv[4]))
+    numbers: require(_path2.default.join(cwd, process.argv[4])),
+    modularScale: process.argv.length >= 6 ? require(_path2.default.join(cwd, process.argv[5])) : null
   }), err => {
     console.error(err);
   });
