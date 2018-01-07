@@ -16,11 +16,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const main = () => {
   const cwd = process.cwd();
-  _fs2.default.writeFile(process.argv[5], (0, _ds2.default)({
+  _fs2.default.writeFile(process.argv[6], (0, _ds2.default)({
     fonts: require(_path2.default.join(cwd, process.argv[2])),
     colors: require(_path2.default.join(cwd, process.argv[3])),
     numbers: require(_path2.default.join(cwd, process.argv[4])),
-    modularScale: process.argv.length >= 6 ? require(_path2.default.join(cwd, process.argv[5])) : null
+    modularScale: require(_path2.default.join(cwd, process.argv[5]))
   }), err => {
     console.error(err);
   });

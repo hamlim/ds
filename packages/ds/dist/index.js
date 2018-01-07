@@ -37,7 +37,7 @@ const stringify = dict => key => {
 exports.default = ({ fonts, colors, numbers, modularScale, fontSizes = 10 }) => {
   let sizes = {};
   if (modularScale) {
-    sizes = Array.from({ length: fontSizes }).map((_, i) => i).reduce((acc, size, i) => _extends({}, acc, { [i]: i * modularScale.ratio || 1 }));
+    sizes = Array.from({ length: fontSizes }).map((_, i) => i).reduce((acc, size, i) => _extends({}, acc, { [i]: i * modularScale.ratio || 1 }), {});
   }
 
   return _prettier2.default.format(`{
@@ -46,7 +46,7 @@ exports.default = ({ fonts, colors, numbers, modularScale, fontSizes = 10 }) => 
   },
   "fonts": {
     ${Object.keys(fonts).map(stringify(fonts)).join(',')},
-    sizes: {
+    "sizes": {
       ${Object.keys(sizes).map(stringifyWithUnits('rem')(sizes)).join(',')}
     }
   },

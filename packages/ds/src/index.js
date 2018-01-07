@@ -27,7 +27,7 @@ export default ({ fonts, colors, numbers, modularScale, fontSizes = 10 }) => {
   if (modularScale) {
     sizes = Array.from({ length: fontSizes })
       .map((_, i) => i)
-      .reduce((acc, size, i) => ({ ...acc, [i]: i * modularScale.ratio || 1 }))
+      .reduce((acc, size, i) => ({ ...acc, [i]: i * modularScale.ratio || 1 }), {})
   }
 
   return prettier.format(
@@ -41,7 +41,7 @@ export default ({ fonts, colors, numbers, modularScale, fontSizes = 10 }) => {
     ${Object.keys(fonts)
       .map(stringify(fonts))
       .join(',')},
-    sizes: {
+    "sizes": {
       ${Object.keys(sizes)
         .map(stringifyWithUnits('rem')(sizes))
         .join(',')}
