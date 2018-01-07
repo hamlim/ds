@@ -4,8 +4,7 @@
   "description": "👻",
   "main": "dist/index.js",
   "scripts": {
-    "make-example":
-      "node ../ds-cli/bin/index.js ../example/fonts.js ../example/colors.js ../example/numbers.js ./example/out.json",
+    "make-example": "node ../ds-cli/bin/index.js ../example/fonts.js ../example/colors.js ../example/numbers.js ./example/out.json",
     "default": "node ./default/build.js",
     "build": "babel ./src --out-dir ./dist"
   },
@@ -13,6 +12,7 @@
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "lerna": "^2.5.1"
   },
