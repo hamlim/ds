@@ -14,5 +14,8 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "lerna": "^2.5.1"
+  },
+  "dependencies": {
+    "yargs": "^10.0.3"
   }
 }

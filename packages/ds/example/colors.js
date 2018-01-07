@@ -3,4 +3,5 @@ module.exports = {
   white: '#fff',
   primary: '#0EA47A',
   secondary: '#D56073',
+  tertiary: 'mediumseagreen'
 }
