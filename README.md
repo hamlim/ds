@@ -11,9 +11,8 @@ and then generates a json string representation of the design system.
 ## Use:
 
 ```bash
-// CLI
-
-yarn ds-cli path/to/fonts.js path/to/colors.js path/to/numbers.js outputPath/ds.json
+# CLI
+yarn ds-cli --config='./appconfig.json'
 ```
 
 ```Javascript

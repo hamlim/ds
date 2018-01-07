@@ -1,0 +1,9 @@
+{
+  "ds": {
+    "numbers": "example/numbers.js",
+    "fonts": "example/fonts.js",
+    "output": "example/out.json",
+    "modularScale": "example/modular-scale.js",
+    "colors": "example/colors.js"
+  }
+}
