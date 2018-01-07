@@ -1,29 +1,36 @@
-'use strict';
+#! /usr/bin/env node
+'use strict'
 
-var _fs = require('fs');
+var _fs = require('fs')
 
-var _fs2 = _interopRequireDefault(_fs);
+var _fs2 = _interopRequireDefault(_fs)
 
-var _path = require('path');
+var _path = require('path')
 
-var _path2 = _interopRequireDefault(_path);
+var _path2 = _interopRequireDefault(_path)
 
-var _ds = require('@matthamlin/ds');
+var _ds = require('@matthamlin/ds')
 
-var _ds2 = _interopRequireDefault(_ds);
+var _ds2 = _interopRequireDefault(_ds)
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj }
+}
 
 const main = () => {
-  const cwd = process.cwd();
-  _fs2.default.writeFile(process.argv[6], (0, _ds2.default)({
-    fonts: require(_path2.default.join(cwd, process.argv[2])),
-    colors: require(_path2.default.join(cwd, process.argv[3])),
-    numbers: require(_path2.default.join(cwd, process.argv[4])),
-    modularScale: require(_path2.default.join(cwd, process.argv[5]))
-  }), err => {
-    console.error(err);
-  });
-};
+  const cwd = process.cwd()
+  _fs2.default.writeFile(
+    process.argv[6],
+    (0, _ds2.default)({
+      fonts: require(_path2.default.join(cwd, process.argv[2])),
+      colors: require(_path2.default.join(cwd, process.argv[3])),
+      numbers: require(_path2.default.join(cwd, process.argv[4])),
+      modularScale: require(_path2.default.join(cwd, process.argv[5])),
+    }),
+    err => {
+      console.error(err)
+    },
+  )
+}
 
-main();
+main()
