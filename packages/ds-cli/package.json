@@ -1,6 +1,6 @@
 {
   "name": "@matthamlin/ds-cli",
-  "version": "2.0.0",
+  "version": "3.0.0-0",
   "description": "A cli for the ds tool",
   "main": "dist/index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   "author": "Matthew Hamlin <hamlim@outlook.com> (https://matthamlin.me/)",
   "license": "MIT",
   "dependencies": {
-    "@matthamlin/ds": "^2.0.0",
+    "@matthamlin/ds": "^3.0.0-0",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "prettier": "^1.9.2"
