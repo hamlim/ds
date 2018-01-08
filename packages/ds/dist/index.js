@@ -14,7 +14,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const stringifyWithFontSize = fontSize => dict => key => {
   if (typeof dict[key] === 'number') {
-    return `"${key}": "${dict[key] * fontSize}"`;
+    return `"${key}": "${dict[key] / fontSize}rem"`;
   } else {
     return `"${key}": {
       ${Object.keys(dict[key]).map(stringifyWithFontSize(fontSize)(dict[key]))}
