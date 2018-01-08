@@ -14,10 +14,10 @@ const main = () => {
     } else {
       c = rawConfig.ds
     }
-    const { output, numbers, colors, fonts, modularScale } = c
-    if (!output || !numbers || !colors || !fonts || !modularScale) {
+    const { output, numbers, colors, fonts, modularScale, breakpoints } = c
+    if (!output || !numbers || !colors || !fonts || !modularScale || !breakpoints) {
       console.error(`
-Error: Config file is lacking required entires for output, numbers, colors, fonts, and modularScale.
+Error: Config file is lacking required entires for output, numbers, colors, fonts, breakpoints, and modularScale.
 Update your config file with these paths and try again.
 `)
       return
@@ -29,6 +29,7 @@ Update your config file with these paths and try again.
           numbers: require(path.join(cwd, numbers)),
           colors: require(path.join(cwd, colors)),
           modularScale: require(path.join(cwd, modularScale)),
+          breakpoints: require(path.join(cwd, breakpoints)),
         }),
         err => {
           if (err) {

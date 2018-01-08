@@ -4,6 +4,7 @@
     "fonts": "example/fonts.js",
     "output": "example/out.json",
     "modularScale": "example/modular-scale.js",
-    "colors": "example/colors.js"
+    "colors": "example/colors.js",
+    "breakpoints": "example/breakpoints.js"
   }
 }

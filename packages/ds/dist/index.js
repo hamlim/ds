@@ -12,6 +12,16 @@ var _prettier2 = _interopRequireDefault(_prettier);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+const stringifyWithFontSize = fontSize => dict => key => {
+  if (typeof dict[key] === 'number') {
+    return `"${key}": "${dict[key] / fontSize}rem"`;
+  } else {
+    return `"${key}": {
+      ${Object.keys(dict[key]).map(stringifyWithFontSize(fontSize)(dict[key]))}
+    }`;
+  }
+};
+
 const stringifyWithUnits = units => dict => key => {
   if (typeof dict[key] === 'string') {
     return `"${key}": "${dict[key]}${units}"`;
@@ -34,7 +44,7 @@ const stringify = dict => key => {
   }
 };
 
-exports.default = ({ fonts, colors, numbers, modularScale, fontSizes = 10 }) => {
+exports.default = ({ fonts, colors, numbers, modularScale, breakpoints, fontSizes = 10, baseFontSize = 16 }) => {
   let sizes = {};
   if (modularScale) {
     sizes = Array.from({ length: fontSizes }).map((_, i) => i).reduce((acc, size, i) => _extends({}, acc, { [i]: i * modularScale.ratio || 1 }), {});
@@ -52,6 +62,9 @@ exports.default = ({ fonts, colors, numbers, modularScale, fontSizes = 10 }) => 
   },
   "numbers": {
     ${Object.keys(numbers).map(stringify(numbers)).join(',')}
+  },
+  "breakpoints": {
+    ${Object.keys(breakpoints).map(stringifyWithFontSize(baseFontSize)(breakpoints)).join(',')}
   }
 }`, { parser: 'json' });
 };

@@ -28,10 +28,10 @@ const main = () => {
     } else {
       c = rawConfig.ds;
     }
-    const { output, numbers, colors, fonts, modularScale } = c;
-    if (!output || !numbers || !colors || !fonts || !modularScale) {
+    const { output, numbers, colors, fonts, modularScale, breakpoints } = c;
+    if (!output || !numbers || !colors || !fonts || !modularScale || !breakpoints) {
       console.error(`
-Error: Config file is lacking required entires for output, numbers, colors, fonts, and modularScale.
+Error: Config file is lacking required entires for output, numbers, colors, fonts, breakpoints, and modularScale.
 Update your config file with these paths and try again.
 `);
       return;
@@ -40,7 +40,8 @@ Update your config file with these paths and try again.
         fonts: require(_path2.default.join(cwd, fonts)),
         numbers: require(_path2.default.join(cwd, numbers)),
         colors: require(_path2.default.join(cwd, colors)),
-        modularScale: require(_path2.default.join(cwd, modularScale))
+        modularScale: require(_path2.default.join(cwd, modularScale)),
+        breakpoints: require(_path2.default.join(cwd, breakpoints))
       }), err => {
         if (err) {
           console.error(`An error occured when attempting to write to the output file. Here is the error from fs.writeFile: `, err);
