@@ -1,5 +1,15 @@
 import prettier from 'prettier'
 
+const stringifyWithFontSize = fontSize => dict => key => {
+  if (typeof dict[key] === 'number') {
+    return `"${key}": "${dict[key] * fontSize}"`
+  } else {
+    return `"${key}": {
+      ${Object.keys(dict[key]).map(stringifyWithFontSize(fontSize)(dict[key]))}
+    }`
+  }
+}
+
 const stringifyWithUnits = units => dict => key => {
   if (typeof dict[key] === 'string') {
     return `"${key}": "${dict[key]}${units}"`
@@ -22,7 +32,7 @@ const stringify = dict => key => {
   }
 }
 
-export default ({ fonts, colors, numbers, modularScale, fontSizes = 10 }) => {
+export default ({ fonts, colors, numbers, modularScale, breakpoints, fontSizes = 10, baseFontSize = 16 }) => {
   let sizes = {}
   if (modularScale) {
     sizes = Array.from({ length: fontSizes })
@@ -50,6 +60,11 @@ export default ({ fonts, colors, numbers, modularScale, fontSizes = 10 }) => {
   "numbers": {
     ${Object.keys(numbers)
       .map(stringify(numbers))
+      .join(',')}
+  },
+  "breakpoints": {
+    ${Object.keys(breakpoints)
+      .map(stringifyWithFontSize(baseFontSize)(breakpoints))
       .join(',')}
   }
 }`,
